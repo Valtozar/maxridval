@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лендинг</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.7;
+      color: #fff;
+      background: radial-gradient(ellipse at top, #1f2233 0%, #12131a 60%, #0b0c10 100%) fixed;
+      min-height: 100vh;
+    }
+    main { max-width: 820px; margin: 0 auto; padding: 72px 20px 80px; }
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.25rem);
+      line-height: 1.15;
+      text-align: center;
+      margin: 0 0 40px;
+      letter-spacing: -0.02em;
+    }
+    p { font-size: 1.1rem; margin: 0 0 18px; color: #fff; opacity: .88; }
+    .cta { display: flex; justify-content: center; margin: 48px 0 24px; }
+    .btn {
+      display: inline-block;
+      padding: 18px 56px;
+      background: #ffd600;
+      color: #111;
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 999px;
+      box-shadow: 0 8px 28px rgba(255, 214, 0, .35);
+      transition: transform .15s, box-shadow .15s, background .15s;
+    }
+    .btn:hover {
+      background: #ffe033;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 34px rgba(255, 214, 0, .5);
+    }
+    h2 { text-align: center; margin: 64px 0 28px; font-size: 1.8rem; }
+    .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .review {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .review p { font-size: 1rem; font-style: italic; opacity: .92; }
+    .review span { font-weight: 600; font-size: .95rem; color: #ffd600; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Добро пожаловать в наш продукт</h1>
+
+    <p>Мы создали решение, которое упрощает повседневные задачи и экономит ваше время. Всё продумано до мелочей, чтобы вы могли сосредоточиться на главном.</p>
+    <p>Простой и понятный интерфейс не требует обучения. Начать работу можно за пару минут, а результат вы увидите уже в первый день использования.</p>
+    <p>Мы ценим качество и поддерживаем наших клиентов на каждом этапе. Если появятся вопросы, наша команда всегда готова помочь.</p>
+
+    <div class="cta"><a class="btn" href="#">Купить</a></div>
+
+    <h2>Отзывы клиентов</h2>
+    <div class="reviews">
+      <div class="review">
+        <p>«Отличный продукт! Пользуюсь уже месяц и очень доволен результатом.»</p>
+        <span>— Алексей</span>
+      </div>
+      <div class="review">
+        <p>«Быстрая доставка и приятное обслуживание. Обязательно куплю ещё раз.»</p>
+        <span>— Мария</span>
+      </div>
+      <div class="review">
+        <p>«Всё работает именно так, как заявлено. Рекомендую друзьям и коллегам.»</p>
+        <span>— Дмитрий</span>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
