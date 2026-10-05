@@ -1,4 +1,7 @@
+import argparse
 import random
+import sys
+from pathlib import Path
 
 TEMPLATES = {
     "хоррор": {
@@ -49,13 +52,24 @@ def build(topic, style):
     return "\n".join(lines)
 
 
-topic = input("Тема видео: ").strip() or "неизвестная тема"
-style = input(f"Шаблон ({', '.join(TEMPLATES)}): ").strip().lower()
-while style not in TEMPLATES:
-    style = input("Выберите из списка: ").strip().lower()
+ALIASES = {"horror": "хоррор", "motivation": "мотивация", "facts": "факты"}
+
+parser = argparse.ArgumentParser(description="Генератор сценариев для коротких видео")
+parser.add_argument("style", nargs="?", help="шаблон: " + ", ".join(f"{en}/{ru}" for en, ru in ALIASES.items()))
+parser.add_argument("topic", nargs="*", help="тема видео (можно несколько слов)")
+args = parser.parse_args()
+
+style = ALIASES.get((args.style or "").lower(), (args.style or "").lower())
+if style not in TEMPLATES:
+    parser.error("укажите шаблон: " + ", ".join(ALIASES) + " (или " + ", ".join(TEMPLATES) + ")")
+
+topic = " ".join(args.topic).strip()
+if not topic and sys.stdin.isatty():
+    topic = input("Тема видео: ").strip()
+topic = topic or "неизвестная тема"
 
 text = build(topic, style)
-with open("scenario.txt", "w", encoding="utf-8") as f:
-    f.write(text + "\n")
+out = Path(__file__).resolve().parent / "scenario.txt"
+out.write_text(text + "\n", encoding="utf-8")
 print(text)
-print("\nСохранено в scenario.txt")
+print(f"\nСохранено в {out}")
