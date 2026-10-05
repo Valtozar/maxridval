@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лендинг</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #fafafa;
+    }
+    main { max-width: 800px; margin: 0 auto; padding: 48px 16px; }
+    h1 { font-size: 2.5rem; text-align: center; margin: 0 0 32px; }
+    p { font-size: 1.1rem; margin: 0 0 16px; }
+    .cta { text-align: center; margin: 40px 0; }
+    .btn {
+      display: inline-block;
+      padding: 16px 48px;
+      background: #ffd600;
+      color: #222;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn:hover { background: #ffc400; }
+    h2 { text-align: center; margin: 48px 0 24px; }
+    .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .review {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .review p { font-size: 1rem; font-style: italic; }
+    .review span { font-weight: 600; font-size: .95rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Добро пожаловать в наш продукт</h1>
+
+    <p>Мы создали решение, которое упрощает повседневные задачи и экономит ваше время. Всё продумано до мелочей, чтобы вы могли сосредоточиться на главном.</p>
+    <p>Простой и понятный интерфейс не требует обучения. Начать работу можно за пару минут, а результат вы увидите уже в первый день использования.</p>
+    <p>Мы ценим качество и поддерживаем наших клиентов на каждом этапе. Если появятся вопросы, наша команда всегда готова помочь.</p>
+
+    <div class="cta"><a class="btn" href="#">Купить</a></div>
+
+    <h2>Отзывы клиентов</h2>
+    <div class="reviews">
+      <div class="review">
+        <p>«Отличный продукт! Пользуюсь уже месяц и очень доволен результатом.»</p>
+        <span>— Алексей</span>
+      </div>
+      <div class="review">
+        <p>«Быстрая доставка и приятное обслуживание. Обязательно куплю ещё раз.»</p>
+        <span>— Мария</span>
+      </div>
+      <div class="review">
+        <p>«Всё работает именно так, как заявлено. Рекомендую друзьям и коллегам.»</p>
+        <span>— Дмитрий</span>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
